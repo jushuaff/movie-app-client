@@ -1,7 +1,7 @@
 import { useState, useEffect, useContext } from 'react';
 import { Form, Button, Container } from 'react-bootstrap';
 import { Navigate } from 'react-router-dom';
-import { API_BASE_URL } from './config/api';
+import { API_BASE_URL } from '../config/api';
 import Swal from 'sweetalert2';
 import UserContext from '../context/UserContext';
 

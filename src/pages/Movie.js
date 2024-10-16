@@ -2,7 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import MovieCard from '../components/MovieCard'; // Import the updated MovieCard component
 import { Row, Col, Form, Button, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
-import { API_BASE_URL } from './config/api';
+import { API_BASE_URL } from '../config/api';
 import UserContext from '../context/UserContext';
 
 export default function Movie() {

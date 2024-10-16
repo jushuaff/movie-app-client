@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { Card, Button, Form } from 'react-bootstrap';
-import { API_BASE_URL } from './config/api';
+import { API_BASE_URL } from '../config/api';
 import UserContext from '../context/UserContext';
 
 export default function MovieCard({ movie, onUpdate, onDelete }) {
