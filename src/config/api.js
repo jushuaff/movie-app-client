@@ -1,0 +1,1 @@
+export const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://movie-app-server-2ixz.onrender.com';

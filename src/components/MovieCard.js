@@ -1,5 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { Card, Button, Form } from 'react-bootstrap';
+import { API_BASE_URL } from './config/api';
 import UserContext from '../context/UserContext';
 
 export default function MovieCard({ movie, onUpdate, onDelete }) {
@@ -13,7 +14,7 @@ export default function MovieCard({ movie, onUpdate, onDelete }) {
     useEffect(() => {
         const fetchComments = async () => {
             try {
-                const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/movies/getComments/${movie._id}`, {
+                const res = await fetch(`${API_BASE_URL}/movies/getComments/${movie._id}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`
                     }
@@ -40,7 +41,7 @@ export default function MovieCard({ movie, onUpdate, onDelete }) {
         }
 
         try {
-            const res = await fetch(`${process.env.REACT_APP_API_BASE_URL}/movies/addComment/${movie._id}`, {
+            const res = await fetch(`${API_BASE_URL}/movies/addComment/${movie._id}`, {
                 method: 'PATCH',
                 headers: {
                     "Content-Type": "application/json",

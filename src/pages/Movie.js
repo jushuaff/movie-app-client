@@ -2,6 +2,7 @@ import { useEffect, useState, useContext } from 'react';
 import MovieCard from '../components/MovieCard'; // Import the updated MovieCard component
 import { Row, Col, Form, Button, Container } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from './config/api';
 import UserContext from '../context/UserContext';
 
 export default function Movie() {
@@ -17,7 +18,7 @@ export default function Movie() {
 
     // Fetch movies
     const fetchMovies = () => {
-        fetch(`${process.env.REACT_APP_API_BASE_URL}/movies/getMovies`, {
+        fetch(`${API_BASE_URL}/movies/getMovies`, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -41,7 +42,7 @@ export default function Movie() {
 
     // Handle movie addition
     const handleAddMovie = () => {
-        fetch(`${process.env.REACT_APP_API_BASE_URL}/movies/addMovie`, {
+        fetch(`${API_BASE_URL}/movies/addMovie`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -71,7 +72,7 @@ export default function Movie() {
     const handleDeleteMovie = (id) => {
         setMovies((prevMovies) => prevMovies.filter(movie => movie._id !== id));
 
-        fetch(`${process.env.REACT_APP_API_BASE_URL}/movies/deleteMovie/${id}`, {
+        fetch(`${API_BASE_URL}/movies/deleteMovie/${id}`, {
             method: 'DELETE',
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('token')}`
